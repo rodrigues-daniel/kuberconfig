@@ -10,5 +10,7 @@ yum install -y system-config-firewall-tui.noarch
 system-config-firewall-tui
 
 sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
 sudo minikube start --vm-driver=none
 sudo minikube config set vm-driver none
